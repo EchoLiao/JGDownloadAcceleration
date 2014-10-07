@@ -36,8 +36,8 @@ static NSThread *_networkRequestThread = nil;
     }
     
     if ([NSThread currentThread] == _networkRequestThread) {
-        [NSThread exit];
         _networkRequestThread = nil;
+        [NSThread exit];
     }
     else {
         [NSThread performSelector:@selector(exit) onThread:_networkRequestThread withObject:nil waitUntilDone:NO];
