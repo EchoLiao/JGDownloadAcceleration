@@ -26,7 +26,8 @@
     BOOL _splittingUnavailable;
     
     unsigned long long _resumedAtSize;
-    
+    CFTimeInterval _startTime;
+
     BOOL _clear;
     
     JGHEADRequest *_headerProvider;

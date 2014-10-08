@@ -210,6 +210,7 @@ static NSThread *_networkRequestThread = nil;
 }
 
 - (void)downloadStarted:(JGDownload *)download {
+    _startTime = CFAbsoluteTimeGetCurrent();
     if (_started) {
         _started(self.tag, self.contentLength);
         _started = nil;
@@ -429,7 +430,7 @@ static NSThread *_networkRequestThread = nil;
     
     [_output seekToFileOffset:finalLocation];
     [_output writeData:data];
-    
+
     if (self.downloadProgress && !_completed) {
         self.downloadProgress(realLength, _resume.currentSize-_resumedAtSize, _resume.currentSize, self.contentLength, self.tag);
     }
@@ -573,6 +574,16 @@ static NSThread *_networkRequestThread = nil;
 
 - (unsigned long long)contentLength {
     return _contentRange.length;
+}
+
+- (unsigned long long)downloadedLength {
+    return _resume.currentSize;
+}
+
+- (double)averageSpeed
+{
+    double delta = CFAbsoluteTimeGetCurrent() - _startTime;
+    return (_resume.currentSize - _resumedAtSize) / 1024.0 / delta;
 }
 
 - (NSUInteger)actualNumberOfConnections {

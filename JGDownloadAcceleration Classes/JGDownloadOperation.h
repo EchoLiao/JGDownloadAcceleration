@@ -23,18 +23,16 @@
 
 @property (nonatomic, strong, readonly) NSError *error;
 
-
 - (unsigned long long)contentLength;
+- (unsigned long long)downloadedLength;
+- (double)averageSpeed; // in kBytes/s
 
 
 //custom init methods
 - (instancetype)initWithURL:(NSURL *)url destinationPath:(NSString *)path allowResume:(BOOL)resume;
 - (instancetype)initWithRequest:(NSURLRequest *)request destinationPath:(NSString *)path allowResume:(BOOL)resume;
 
-
-
 - (void)cancelAndClearFiles; //cancel the operation and remove the partial file as well as the metadata file
-
 
 //Delegate blocks
 - (void)setCompletionBlockWithSuccess:(void (^)(JGDownloadOperation *operation))success failure:(void (^)(JGDownloadOperation *operation, NSError *error))failure;
