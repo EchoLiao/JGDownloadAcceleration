@@ -26,6 +26,7 @@
     BOOL _splittingUnavailable;
     
     unsigned long long _resumedAtSize;
+    unsigned long long _downloadedSize;
     CFTimeInterval _startTime;
 
     BOOL _clear;

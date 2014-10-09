@@ -501,6 +501,8 @@ static NSThread *_networkRequestThread = nil;
         [_resume removeFile];
     }
     
+    _downloadedSize = _resume.currentSize;
+
     _resume = nil;
 }
 
@@ -577,11 +579,7 @@ static NSThread *_networkRequestThread = nil;
 }
 
 - (unsigned long long)downloadedLength {
-    return _resume.currentSize;
-}
-
-- (unsigned long long)sizeOfResume {
-    return _resumedAtSize;
+    return _resume ? _resume.currentSize : _downloadedSize;
 }
 
 - (double)averageSpeed

@@ -21,9 +21,10 @@
 @property (nonatomic, assign, readonly) NSUInteger actualNumberOfConnections;
 @property (nonatomic, strong, readonly) NSError *error;
 
+@property (nonatomic, strong) id userInfo;
+
 - (unsigned long long)contentLength;
 - (unsigned long long)downloadedLength;
-- (unsigned long long)sizeOfResume;
 - (double)averageSpeed; // in kBytes/s
 
 //custom init methods
