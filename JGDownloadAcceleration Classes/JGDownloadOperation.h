@@ -18,15 +18,13 @@
 //readonly
 @property (nonatomic, strong, readonly) NSURLRequest *originalRequest;
 @property (nonatomic, strong, readonly) NSString *destinationPath;
-
 @property (nonatomic, assign, readonly) NSUInteger actualNumberOfConnections;
-
 @property (nonatomic, strong, readonly) NSError *error;
 
 - (unsigned long long)contentLength;
 - (unsigned long long)downloadedLength;
+- (unsigned long long)sizeOfResume;
 - (double)averageSpeed; // in kBytes/s
-
 
 //custom init methods
 - (instancetype)initWithURL:(NSURL *)url destinationPath:(NSString *)path allowResume:(BOOL)resume;

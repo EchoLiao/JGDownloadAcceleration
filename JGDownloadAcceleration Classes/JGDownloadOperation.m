@@ -580,6 +580,10 @@ static NSThread *_networkRequestThread = nil;
     return _resume.currentSize;
 }
 
+- (unsigned long long)sizeOfResume {
+    return _resumedAtSize;
+}
+
 - (double)averageSpeed
 {
     double delta = CFAbsoluteTimeGetCurrent() - _startTime;
