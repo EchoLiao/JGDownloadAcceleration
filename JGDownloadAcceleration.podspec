@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JGDownloadAcceleration"
-  s.version      = "1.2.1"
+  s.version      = "1.1"
   s.summary      = "JGDownloadAcceleration is a Networking library for iOS targeted at downloading large files on to the device's hard disk."
   s.homepage     = "https://github.com/JonasGessner/JGDownloadAcceleration"
   s.author       = { "Jonas Gessner" => "support@j-gessner.de" }
