@@ -19,8 +19,7 @@
 @property (nonatomic, strong,         ) NSString *finalDestinationPath;
 @property (nonatomic, assign, readonly) NSUInteger actualNumberOfConnections;
 @property (nonatomic, strong, readonly) NSError *error;
-
-@property (nonatomic, strong) id userInfo;
+@property (nonatomic, strong          ) id userInfo;
 
 - (unsigned long long)contentLength;
 - (unsigned long long)downloadedLength;
