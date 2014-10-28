@@ -18,6 +18,7 @@
 //readonly
 @property (nonatomic, strong, readonly) NSURLRequest *originalRequest;
 @property (nonatomic, strong, readonly) NSString *destinationPath;
+@property (nonatomic, strong,         ) NSString *finalDestinationPath;
 @property (nonatomic, assign, readonly) NSUInteger actualNumberOfConnections;
 @property (nonatomic, strong, readonly) NSError *error;
 
