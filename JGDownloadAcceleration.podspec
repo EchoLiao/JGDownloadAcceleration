@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "JGDownloadAcceleration is a Networking library for iOS targeted at downloading large files on to the device's hard disk."
   s.homepage     = "https://github.com/JonasGessner/JGDownloadAcceleration"
   s.author       = { "Jonas Gessner" => "support@j-gessner.de" }
-  s.source       = { :git => ".", :commit => "HEAD" }
+  s.source       = { :git => "https://github.com/EchoLiao/JGDownloadAcceleration.git" }
   s.source_files = 'JGDownloadAcceleration Classes/*.{h,m}'
   s.platform     = :ios, '5.0'
   s.license      = 'MIT'
